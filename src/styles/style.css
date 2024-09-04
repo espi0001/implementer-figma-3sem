@@ -15,12 +15,13 @@
     --step-6: clamp(3.8147rem, 2.9462rem + 4.3423vw, 6.3115rem);
 
     --color-primary1: #ffcc4a;
-    --color-primary2: ##4eaf4e;
+    --color-primary2: #4eaf4e;
     --color-primary3: #181818;
     --color-secondary1: #f5f5f5;
     --color-secondary2: #ffffff;
 
     --color-text: #595566;
+    --color-faq: #dadada;
     --color-navigation: #1b1b1b 91%;
 
     --font-weight-400: 400;

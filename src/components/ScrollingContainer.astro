@@ -1,4 +1,5 @@
 ---
+import "../styles/style.css";
 const { cardContent } = Astro.props;
 ---
 
@@ -6,7 +7,8 @@ const { cardContent } = Astro.props;
   {
     cardContent.map((card) => (
       <li>
-        <h3>{card.title}</h3>
+        <img src={card.image} alt="" />
+        <h6>{card.title}</h6>
         <p>{card.body}</p>
       </li>
     ))
@@ -18,20 +20,29 @@ const { cardContent } = Astro.props;
     list-style: none;
     display: flex;
     overflow-x: auto;
-    gap: 1rem;
+    gap: var(--card-gap);
     padding: 0;
 
     scroll-snap-type: x mandatory;
     grid-column: full;
-    padding-inline: max(1rem, 50% - 50rem / 2);
+    padding-inline: max(1rem, 50% - var(--content-width) / 2);
     padding-block-end: 1rem;
 
-    > * {
+    > li {
       flex: 1 0 50%;
-      background-color:#EBEBEB;
-      padding: 2.75rem 2.1875rem;
-      border-radius: 8px;
-      color: #595566;
+      background: var(--color-card);
+      padding: var(--card-padding);
+      border-radius: var(--card-border-radius);
+      color: var(--color-primary3);
+
+      &:nth-child(2) {
+        background: var(--color-primary3); /* Sort baggrund */
+        color: var(--color-secondary2); /* Hvid skrift */
+      }
+
+      img {
+        width: 10%;
+      }
     }
   }
 </style>

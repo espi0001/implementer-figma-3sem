@@ -4,11 +4,10 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
+import { cardContent } from "../data/card-content.js";
 import Tag from "../components/Tag.astro";
 
 // import { Icon } from "astro-icon/components";
-
-import { cardContent } from "../data/card-content.js";
 ---
 
 <MainLayout title="Home">
@@ -169,7 +168,7 @@ import { cardContent } from "../data/card-content.js";
       /* max-width: var(--content-width); */
     }
     h2 {
-      font-weight: bold;
+      font-weight: var(--font-weight-700);
     }
   }
 

@@ -8,7 +8,7 @@ import "../styles/style.css";
     <p>Build stronger Customer Relationships with Consultalk</p>
   </div>
   <form name="newsletter" method="POST" data-netlify="true">
-    <label for="email" class="email"> <input type="email" id="email" name="email" required /></label>
+    <label for="email" class="email"> <input type="email" id="email" name="email" required placeholder="your mail address" /></label>
     <div class="knap">
       <button class="send_buttondiv" type="submit">Subscribe</button>
     </div>
@@ -32,6 +32,13 @@ import "../styles/style.css";
       display: flex;
       align-items: center;
       gap: 21px;
+
+      input#email {
+        padding: 22px 155px 22px 33px;
+        border-radius: 54px;
+        border: 1px #e3e3e3;
+        color: #a9a9a9;
+      }
     }
 
     button {

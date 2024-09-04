@@ -29,7 +29,10 @@
     --font-weight-600: 600;
     --font-weight-700: 700;
 
-    text-align: left;
+    --content-width: 50rem;
+    --card-padding: 2.75rem 2.1875rem;
+    --card-gap: 1rem;
+    --card-border-radius: 8px;
   }
 
   body {

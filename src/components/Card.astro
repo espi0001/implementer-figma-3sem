@@ -1,41 +1,39 @@
 ---
 import "../styles/style.css";
 import Button from "./Button.astro";
-const { style, linket } = Astro.props;
-
+const { style, h6, tekst, buttonProps } = Astro.props;
 ---
-<article>
-<div class="tekst">
-    <h6>Finance & Restructuring</h6>
-    <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
-</div>
-<Button style="primary">Our Services</Button>
+
+<article class={style}>
+  <h6>{h6}</h6>
+  <p>{tekst}</p>
+
+  <Button {...buttonProps}><slot /></Button>
 </article>
 
-
 <style>
-
-    article {
-         background: rgba(38.25, 38.25, 38.25, 0.90);
-         padding: 46px;
-         display: flex;
-         flex-direction: column;
-         gap: 36px;
-         border-radius: 20px; 
-         border: 1px rgba(255, 255, 255, 0.20); 
-         backdrop-filter: blur(32px); 
-
-    }
- 
-       .tekst {
-            color: var(--color-secondary2);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-           
-         }
+  article {
+    padding: 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    border-radius: 20px;
+    backdrop-filter: blur(32px);
+  }
 
   .primary {
+    background: rgba(38.25, 38.25, 38.25, 0.9);
+    border: 1px rgba(255, 255, 255, 0.2);
+    color: var(--color-secondary2);
+  }
+
+  .secondary {
+    background: var(--color-secondary1);
+    border: 1px #eaeaea;
+    color: var(--color-primary3);
+  }
+
+  /* .primary {
     background: var(--color-primary3);
     color: var(--color-secondary2);
   }
@@ -44,14 +42,11 @@ const { style, linket } = Astro.props;
     border: 2px solid var(--color-primary3);
     color: var(--color-primary3);
     text-decoration: none;
-  }
+  } */
 
-  
   @media screen and (min-width: 768px) {
-   
   }
 
   @media screen and (min-width: 1024px) {
-   
   }
 </style>

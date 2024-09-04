@@ -6,7 +6,7 @@ import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 import Tag from "../components/Tag.astro";
 
-import { Icon } from "astro-icon/components";
+// import { Icon } from "astro-icon/components";
 
 import { cardContent } from "../data/card-content.js";
 ---
@@ -24,9 +24,9 @@ import { cardContent } from "../data/card-content.js";
   </section>
 
   <section class="who-we-are">
-    <Card />
-    <Card />
-    <Card />
+    <Card style="primary" buttonProps={{ style: "primary" }} h6="Finance & Restructuring" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Our Services</Card>
+    <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">More About</Card>
+    <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Explore Our Solution</Card>
   </section>
 
   <section class="what-to-expect">

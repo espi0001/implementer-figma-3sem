@@ -4,6 +4,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
+import Tag from "../components/Tag.astro";
 
 import { Icon } from "astro-icon/components";
 
@@ -31,9 +32,8 @@ import { cardContent } from "../data/card-content.js";
   <section class="what-to-expect">
     <img src="https://s3-alpha-sig.figma.com/img/59aa/392f/a60bf28b59fa6920c44db54965a542ca?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bK~PpUZth~4ln7bpJBYbvG4G6VPtqlrhcC801P1sI7xbw9f7YyHhXFCbgBcgP-8ujnaLgaw5a8Yfwjg7dy6pE37rpoGP9rFXobYPx157wWBy8Vlw2Y58I1CB8fBqGWNH4wKlwubDKuHL6~FTd5kpKnVzj6esxwWPAsHLUwyjcJGzcq0BKn7LILN2iRGSEgT4I7wCtiv3ubk59H2XaDKtfjRQX6644JZI7TKFgCc0F7x7pQnkzji8bOsui24-~NEK6oU0iYv~TsTvGLTnkHhNpvsAK6ySDZr3KZV9pWnAXKMOjaI40wrzOa88btW~jqAdkv9DMvswy3k-h0pYWY-EQw__" alt="" />
     <article>
-      <div class="title">
-        <p>WE'LL WORK WITH YOU</p>
-      </div>
+      <Tag style="secondary">WE'LL WORK WITH YOU</Tag>
+
       <div class="content">
         <div>
           <h2>What To Expect</h2>

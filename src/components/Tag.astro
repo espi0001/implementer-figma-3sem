@@ -1,0 +1,22 @@
+---
+import "../styles/style.css";
+const { style } = Astro.props;
+---
+
+<p class={style}><slot /></p>
+
+<style>
+  p {
+    padding: 0 19px;
+    border-radius: 20px;
+  }
+  .primary {
+    background: var(--color-primary2);
+    color: var(--color-secondary2);
+  }
+
+  .secondary {
+    background: var(--color-primary1);
+    color: var(--color-primary3);
+  }
+</style>

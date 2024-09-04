@@ -4,9 +4,13 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Accordion from "../components/Accordion.astro";
 import TeamCard from "../components/TeamCard.astro";
+import Tag from "../components/Tag.astro";
 ---
 
 <MainLayout title="About">
+  <section>
+    <Tag style="primary">About Us</Tag>
+  </section>
   <section class="team">
     <p class="faq">Our team</p>
     <h2>We champion the bold to achieve the extraordinary</h2>
@@ -18,7 +22,7 @@ import TeamCard from "../components/TeamCard.astro";
   </section>
   <section class="accordion">
     <div class="overskrift-tag">
-      <p class="faq">FAQ</p>
+      <Tag style="primary">FAQ</Tag>
       <h2>Customer Questions</h2>
     </div>
     <div class="accordion-container">

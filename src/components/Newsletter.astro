@@ -1,0 +1,49 @@
+---
+import "../styles/style.css";
+---
+
+<article>
+  <div class="tekst">
+    <h4>Subscribe Our Newsletter</h4>
+    <p>Build stronger Customer Relationships with Consultalk</p>
+  </div>
+  <form name="newsletter" method="POST" data-netlify="true">
+    <label for="email" class="email"> <input type="email" id="email" name="email" required /></label>
+    <div class="knap">
+      <button class="send_buttondiv" type="submit">Subscribe</button>
+    </div>
+  </form>
+
+  <style>
+    article {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary3);
+      color: var(--color-secondary2);
+      gap: 141px;
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+    }
+
+    button {
+      display: inline-block;
+      padding: 16px 37px;
+      transition: all 0.55s ease;
+      border-radius: 42px;
+      background: var(--color-primary1);
+      color: var(--color-primary3);
+
+      &:hover {
+        transform: scale(1.04);
+        background: var(--color-primary3);
+        color: var(--color-secondary2);
+        text-decoration: none;
+      }
+    }
+  </style>
+</article>

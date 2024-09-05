@@ -2,10 +2,15 @@
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import EmployeeCard from "../components/EmployeeCard.astro";
+
+import EmployeeSection from "../components/EmployeeSection.astro";
+
+const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/employees.json").then((res) => res.json());
 ---
 
 <MainLayout title="Team">
-  <EmployeeCard />
+  <!-- <EmployeeCard /> -->
+  <EmployeeSection data={data} />
 </MainLayout>
 
 <style>

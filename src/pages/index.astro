@@ -1,13 +1,13 @@
 ---
-import "../styles/style.css";
+// import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 import { cardContent } from "../data/card-content.js";
 import Tag from "../components/Tag.astro";
-
-// import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import sarah from "../assets/sarah.jpg";
 ---
 
 <MainLayout title="Home">
@@ -19,7 +19,7 @@ import Tag from "../components/Tag.astro";
       </div>
       <Button style="secondary" linket="#">Book a meeting</Button>
     </article>
-    <img src="https://s3-alpha-sig.figma.com/img/18ac/a905/855e7462a88e8579e28bfc183e76927c?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=i8~clkh4soCPLACLtVSrc60rCn~Tu10vdXkhh6oxVelDbrV~~cf-ONjLemAM4LqcMH6uOgjz7txX0dVK5jOOu4unX~MGE-kJwMH-0N47UX6qSq64n9xNnC0r2e6ZAx~t5osTi5AQcXnPJbh8K7KZOYO5t-owpYWWaRJzryAfJsD9Xlu7lc3io9Z6nfoT-9w5ikGjfSC7x-0~AUGfk5Ds6GNTY3xYxUBiYexNt3aZpsdEcA83ofVAlYkwapBb22Crgl1y~uciYe-iyCBID6LXw0O15TTc3aZJOXBSnUElTa0wqxa6Mx0sGCbpk-rJACbpcO~FNv5hBtUSmX7N2FyC2w__" alt="" />
+    <Image alt="" src={sarah} />
   </section>
 
   <section class="who-we-are">

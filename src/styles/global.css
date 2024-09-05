@@ -41,9 +41,6 @@
   }
 
   body {
-    min-height: 100svh;
-    /* font-family: system-ui, sans-serif; */
-
     list-style: none;
     background-color: var(--color-secondary02);
     font-size: var(--step-0);
@@ -54,6 +51,9 @@
     max-width: 1600px;
     margin: auto;
   }
+  /* section {
+    padding-inline: 22.5rem;
+  } */
 
   h1,
   h2,

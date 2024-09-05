@@ -3,6 +3,21 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-<article>
-  {data.map((employee) => <EmployeeCard employee={...employee} />)}
+<article data-theme="dark">
+  {data.map((employee) => <EmployeeCard employee={employee} />)}
 </article>
+
+<style>
+  @layer components {
+    [data-theme="dark"] & {
+      background: var(--color-primary3);
+    }
+
+    article {
+      background: red;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+</style>

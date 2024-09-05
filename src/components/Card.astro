@@ -1,5 +1,4 @@
 ---
-import "../styles/style.css";
 import Button from "./Button.astro";
 const { style, h6, tekst, buttonProps } = Astro.props;
 ---
@@ -12,41 +11,26 @@ const { style, h6, tekst, buttonProps } = Astro.props;
 </article>
 
 <style>
-  article {
-    padding: 46px;
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    border-radius: 20px;
-    backdrop-filter: blur(32px);
-  }
+  @layer components {
+    article {
+      padding: 46px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      border-radius: 20px;
+      backdrop-filter: blur(32px);
+    }
 
-  .primary {
-    background: rgba(38.25, 38.25, 38.25, 0.9);
-    border: 1px rgba(255, 255, 255, 0.2);
-    color: var(--color-secondary2);
-  }
+    .primary {
+      background: rgba(38.25, 38.25, 38.25, 0.9);
+      border: 1px rgba(255, 255, 255, 0.2);
+      color: var(--color-secondary2);
+    }
 
-  .secondary {
-    background: var(--color-secondary1);
-    border: 1px #eaeaea;
-    color: var(--color-primary3);
-  }
-
-  /* .primary {
-    background: var(--color-primary3);
-    color: var(--color-secondary2);
-  }
-  .primary:hover {
-    background: var(--color-secondary2);
-    border: 2px solid var(--color-primary3);
-    color: var(--color-primary3);
-    text-decoration: none;
-  } */
-
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1024px) {
+    .secondary {
+      background: var(--color-secondary1);
+      border: 1px #eaeaea;
+      color: var(--color-primary3);
+    }
   }
 </style>

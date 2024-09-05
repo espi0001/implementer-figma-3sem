@@ -1,13 +1,17 @@
 ---
-// import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 import { cardContent } from "../data/card-content.js";
+
 import Tag from "../components/Tag.astro";
 import { Image } from "astro:assets";
-import sarah from "../assets/sarah.jpg";
+import sarah from "../assets/images/sarah.jpg";
+import home1 from "../assets/home1.jpg";
+import home2 from "../assets/home2.jpg";
+import home3 from "../assets/home3.jpg";
+import home4 from "../assets/home4.jpg";
 
 import { Icon } from "astro-icon/components";
 ---
@@ -32,7 +36,7 @@ import { Icon } from "astro-icon/components";
   </section>
 
   <section class="what-to-expect">
-    <!-- <img src="https://s3-alpha-sig.figma.com/img/59aa/392f/a60bf28b59fa6920c44db54965a542ca?Expires=1726444800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=bK~PpUZth~4ln7bpJBYbvG4G6VPtqlrhcC801P1sI7xbw9f7YyHhXFCbgBcgP-8ujnaLgaw5a8Yfwjg7dy6pE37rpoGP9rFXobYPx157wWBy8Vlw2Y58I1CB8fBqGWNH4wKlwubDKuHL6~FTd5kpKnVzj6esxwWPAsHLUwyjcJGzcq0BKn7LILN2iRGSEgT4I7wCtiv3ubk59H2XaDKtfjRQX6644JZI7TKFgCc0F7x7pQnkzji8bOsui24-~NEK6oU0iYv~TsTvGLTnkHhNpvsAK6ySDZr3KZV9pWnAXKMOjaI40wrzOa88btW~jqAdkv9DMvswy3k-h0pYWY-EQw__" alt="" /> -->
+    <Image alt="" src={home1} />
     <article>
       <Tag style="secondary">WE'LL WORK WITH YOU</Tag>
 
@@ -51,11 +55,16 @@ import { Icon } from "astro-icon/components";
 
   <section class="services">
     <div class="teksten">
-      <!-- <img src="/src/icons/financial-projections.svg" alt="" /> -->
       <h2>Financial Projections</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <ScrollingContainer cardContent={cardContent} />
+  </section>
+
+  <section>
+    <Image alt="" src={home2} />
+    <Image alt="" src={home3} />
+    <Image alt="" src={home4} />
   </section>
 </MainLayout>
 

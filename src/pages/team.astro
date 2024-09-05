@@ -1,9 +1,12 @@
 ---
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
+import EmployeeCard from "../components/EmployeeCard.astro";
 ---
 
-<MainLayout title="Team" />
+<MainLayout title="Team">
+  <EmployeeCard />
+</MainLayout>
 
 <style>
   @media screen and (min-width: 768px) {
@@ -15,5 +18,3 @@ import MainLayout from "../layouts/MainLayout.astro";
   @media screen and (min-width: 1440px) {
   }
 </style>
-
-<script></script>

@@ -1,25 +1,18 @@
 ---
 import "../styles/style.css";
 import MainLayout from "../layouts/MainLayout.astro";
-import EmployeeCard from "../components/EmployeeCard.astro";
+import EmployeeSection from "../components/EmployeeSection.astro";
 
 import EmployeeSection from "../components/EmployeeSection.astro";
 
 const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/employees.json").then((res) => res.json());
+
+// const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 <MainLayout title="Team">
-  <EmployeeCard />
+  <!-- <EmployeeSection data={firstThreeEmployees} /> -->
   <EmployeeSection data={employeeData} />
 </MainLayout>
 
-<style>
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1024px) {
-  }
-
-  @media screen and (min-width: 1440px) {
-  }
-</style>
+<style></style>

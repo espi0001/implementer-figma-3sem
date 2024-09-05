@@ -4,27 +4,16 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-<section>
+<article>
   {data.map((employee) => <EmployeeCard {employee} />)}
-</section>
+</article>
 
 <style>
   @layer components {
-    [data-theme="dark"] {
-      --bg-section: red;
-      --text-section: #fff;
-      --bg-card: blue;
-      --text-card: #fff;
-    }
-
-    section {
-      --bg-section: #fff;
-      --text-section: red;
-      --bg-card: #fff;
-      --text-card: blue;
-      padding: 2rem;
-      color: var(--text-section);
-      background: var(--bg-section);
+    article {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 51px;
     }
   }
 </style>

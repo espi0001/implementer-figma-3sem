@@ -1,6 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import EmployeeSection from "../components/EmployeeSection.astro";
 
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
@@ -14,16 +13,9 @@ import home1 from "../assets/home1.jpg";
 import home2 from "../assets/home2.jpg";
 import home3 from "../assets/home3.jpg";
 import home4 from "../assets/home4.jpg";
-
-const employeeData = await fetch("https://raw.githubusercontent.com/daviatkea/frontend-design/main/resources/json/employees.json").then((res) => res.json());
-
-const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 <MainLayout title="Home">
-  <EmployeeSection data={firstThreeEmployees} />
-  <EmployeeSection data={employeeData} />
-
   <section class="hero">
     <article class="tekst-knap">
       <h1>Adam Buschemia Business Consultant</h1>

@@ -1,0 +1,19 @@
+---
+import CorevaluesCard from "./CorevaluesCard.astro";
+const { data } = Astro.props;
+console.log(data);
+---
+
+<article>
+  {data.map((corevalues) => <CorevaluesCard {corevalues} />)}
+</article>
+
+<style>
+  @layer components {
+    article {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 51px;
+    }
+  }
+</style>

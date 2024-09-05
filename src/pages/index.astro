@@ -1,5 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import EmployeeSection from "../components/EmployeeSection.astro";
+
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
@@ -13,10 +15,15 @@ import home2 from "../assets/home2.jpg";
 import home3 from "../assets/home3.jpg";
 import home4 from "../assets/home4.jpg";
 
-import { Icon } from "astro-icon/components";
+const employeeData = await fetch("https://raw.githubusercontent.com/daviatkea/frontend-design/main/resources/json/employees.json").then((res) => res.json());
+
+const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 <MainLayout title="Home">
+  <EmployeeSection data={firstThreeEmployees} />
+  <EmployeeSection data={employeeData} />
+
   <section class="hero">
     <article class="tekst-knap">
       <div class="tekst">
@@ -29,7 +36,6 @@ import { Icon } from "astro-icon/components";
   </section>
 
   <section class="who-we-are">
-    <Icon name="balance" />
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Finance & Restructuring" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Our Services</Card>
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">More About</Card>
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Explore Our Solution</Card>
@@ -134,9 +140,9 @@ import { Icon } from "astro-icon/components";
 
   .what-to-expect {
     justify-content: center;
-    align-items: flex-start;
+
     gap: 82px;
-    display: inline-flex;
+    display: flex;
     padding: 263px 0;
 
     img {

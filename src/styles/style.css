@@ -1,9 +1,9 @@
-@layer reset, global;
+/* @layer reset, global;
 
 @import "./reset.css" layer(reset);
 
 @layer global {
-  /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1240,18,1.333,6,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
 
   :root {
     --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
@@ -38,7 +38,7 @@
 
   body {
     min-height: 100svh;
-    /* font-family: system-ui, sans-serif; */
+
 
     list-style: none;
     background-color: var(--color-secondary02);
@@ -46,7 +46,7 @@
   }
 
   main {
-    /* background-color: var(--color_black); */
+
     max-width: 1600px;
     margin: auto;
   }
@@ -92,4 +92,4 @@
     cursor: pointer;
     transition: all 0.55s ease;
   }
-}
+} */

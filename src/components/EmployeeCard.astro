@@ -10,10 +10,17 @@ if (!images[img]) throw new Error(`"${img}" does not exist in glob: "src/assets/
 ---
 
 <article>
-  <Image src={images[img]()} alt={name} width={100} />
+  <h2>{name}</h2>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <Image src={images[img]()} alt={name} />
 </article>
 
 <style>
   @layer components {
+    article {
+      color: var(--text-card);
+      background: var(--bg-card);
+    }
   }
 </style>

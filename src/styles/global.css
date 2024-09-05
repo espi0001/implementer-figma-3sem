@@ -17,11 +17,12 @@
     --color-primary3: #181818;
     --color-secondary1: #f5f5f5;
     --color-secondary2: #ffffff;
-
     --color-text: #595566;
     --color-card: #ebebeb;
     --color-faq: #dadada;
     --color-navigation: #1b1b1b 91%;
+
+    color: var(--color-secondary2);
 
     --font-weight-400: 400;
     --font-weight-500: 500;

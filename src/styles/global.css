@@ -1,10 +1,8 @@
-@layer reset, global;
+@layer reset, global, components, overrides;
 
-@import "./reset.css" layer(reset);
+@import url("./reset.css") layer(reset);
 
 @layer global {
-  /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1240,18,1.333,6,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
   :root {
     --step-0: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
     --step-1: clamp(1.25rem, 1.1632rem + 0.4341vw, 1.4996rem);
@@ -34,6 +32,9 @@
     --card-padding: 2.75rem 2.1875rem;
     --card-gap: 1rem;
     --card-border-radius: 8px;
+
+    line-height: 1.5;
+    font-family: "Lato", sans-serif;
   }
 
   body {
@@ -60,6 +61,11 @@
     font-family: "Cabin", sans-serif;
     color: var(--color-primary03);
     font-weight: var(--font-weight-600);
+    line-height: 1.3;
+  }
+
+  h1 {
+    font-size: 3.125rem;
   }
 
   p,

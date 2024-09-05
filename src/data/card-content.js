@@ -1,5 +1,3 @@
-import BalanceSheetIcon from "../icons/balance-sheet.svg";
-
 export const cardContent = [
   {
     image: "/src/icons/balance-sheet.svg",

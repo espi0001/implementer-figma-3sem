@@ -60,6 +60,24 @@ import ContactInfo from "../components/ContactInfo.astro";
     </div>
     <ScrollingContainer cardContent={cardContent} />
   </section>
+  <section class="experience">
+    <Tag style="tertiary">Experience</Tag>
+    <div class="teksten">
+      <h2>More than 25 years of experience</h2>
+      <p>3000+ our clients are insured around the World</p>
+    </div>
+  </section>
+
+  <section class="core">
+    <Tag style="secondary">Growing with our Clients</Tag>
+    <div class="teksten2">
+      <div>
+        <h2>Our core values & principles</h2>
+        <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+      </div>
+      <Button style="secondary" linket="#">Get in touch</Button>
+    </div>
+  </section>
 
   <section class="sidste">
     <article>
@@ -191,6 +209,19 @@ import ContactInfo from "../components/ContactInfo.astro";
 
   .teksten {
     max-width: 50rem;
+  }
+
+  .experience {
+    background: var(--color-primary1);
+    color: var(--color-primary3);
+  }
+
+  .core {
+    background: var(--color-primary3);
+    color: var(--color-secondary2);
+  }
+  .teksten2 {
+    display: flex;
   }
   .sidste {
     display: grid;

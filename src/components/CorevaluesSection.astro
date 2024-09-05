@@ -1,11 +1,12 @@
 ---
 import CorevaluesCard from "./CorevaluesCard.astro";
+
 const { data } = Astro.props;
 console.log(data);
 ---
 
 <article>
-  {data.map((corevalues) => <CorevaluesCard {corevalues} />)}
+  {data.map((corevalue) => <CorevaluesCard {corevalue} />)}
 </article>
 
 <style>

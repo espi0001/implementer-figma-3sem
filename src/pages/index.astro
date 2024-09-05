@@ -1,7 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 
+import AndenSection from "../components/AndenSection.astro";
+
 import Button from "../components/Button.astro";
+
 import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 import { cardContent } from "../data/card-content.js";
@@ -18,9 +21,9 @@ import home4 from "../assets/home4.jpg";
 import Overskrift from "../components/Overskrift.astro";
 import ContactInfo from "../components/ContactInfo.astro";
 
-import CorevaluesSection from "../components/CorevaluesSection.astro";
+// import CorevaluesSection from "../components/CorevaluesSection.astro";
 
-const corevaluesData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
+// const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 ---
 
 <MainLayout title="Home">
@@ -38,24 +41,7 @@ const corevaluesData = await fetch("https://raw.githubusercontent.com/espi0001/f
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">More About</Card>
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Explore Our Solution</Card>
   </section>
-
-  <section class="what-to-expect">
-    <Image alt="" src={home1} />
-    <article>
-      <Tag style="secondary">WE'LL WORK WITH YOU</Tag>
-
-      <div class="content">
-        <div>
-          <h2>What To Expect</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <ul>
-          <li>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.</li>
-          <li>Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.</li>
-        </ul>
-      </div>
-    </article>
-  </section>
+  <AndenSection imageProps={{ imageProps: "case2" }} tagProps={{ style: "secondary" }} h2="What To Expect" tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">WE'LL WORK WITH YOU</AndenSection>
 
   <section class="services">
     <div class="teksten">
@@ -74,8 +60,8 @@ const corevaluesData = await fetch("https://raw.githubusercontent.com/espi0001/f
 
   <section class="core">
     <Tag style="secondary">Growing with our Clients</Tag>
-    <Overskrift style="secondary" linket="#" buttonProps={{ style: "secondary" }} h2="Our core values & principles" tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.">Get in touch</Overskrift>
-    <CorevaluesSection data={corevaluesData} />
+    <Overskrift farve="secondary" linket="#" buttonProps={{ style: "secondary" }} h2="Our core values & principles" tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.">Get in touch</Overskrift>
+    <!-- <CorevaluesSection data={corevalueData} /> -->
   </section>
 
   <section class="sidste">
@@ -88,42 +74,19 @@ const corevaluesData = await fetch("https://raw.githubusercontent.com/espi0001/f
       <ContactInfo iconname="monday-friday" tekst="Monday To Friday" h6="9AM - 5PM" />
       <ContactInfo iconname="adress-grey" tekst="USA Office" h6="195 Devonshire St Boston, MA 02110" />
     </article>
-    <div class="billede-grid">
-      <Image alt="" src={home2} />
-      <div>
-        <Image alt="" src={home3} />
-        <Image alt="" src={home4} />
+    <figure>
+      <div class="billede-grid">
+        <Image alt="" src={home2} />
+        <div>
+          <Image alt="" src={home3} />
+          <Image alt="" src={home4} />
+        </div>
       </div>
-    </div>
+    </figure>
   </section>
 </MainLayout>
 
 <style>
-  [data-icon="balance"] {
-    width: 24px;
-  }
-
-  ul {
-    display: grid;
-    gap: 1rem;
-  }
-
-  li {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-    color: #595566;
-  }
-
-  li:before {
-    content: "";
-    width: 1.6rem;
-    aspect-ratio: 1;
-    background: var(--checkmark-icon) 50% 50% / contain no-repeat;
-  }
-
   .hero {
     background-color: var(--color-primary3);
     color: var(--color-secondary2);
@@ -153,26 +116,6 @@ const corevaluesData = await fetch("https://raw.githubusercontent.com/espi0001/f
     display: flex;
     justify-content: center;
     gap: 20px;
-  }
-
-  .what-to-expect {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    justify-content: center;
-    gap: 82px;
-    color: var(--color-primary3);
-
-    article {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
   }
 
   .title {

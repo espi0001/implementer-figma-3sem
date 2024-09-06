@@ -1,9 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import casestudy1 from "../assets/casestudy1.jpg";
 ---
 
-<MainLayout title="Case Study" />
-
+<MainLayout title="Case Study">
+  <section class="banner">
+    <Image alt="" src={casestudy1} />
+  </section>
+</MainLayout>
 <style></style>
 
 <script></script>

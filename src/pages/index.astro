@@ -21,6 +21,8 @@ import home4 from "../assets/home4.jpg";
 import Overskrift from "../components/Overskrift.astro";
 import ContactInfo from "../components/ContactInfo.astro";
 
+import Animation from "../components/Animation.astro";
+
 // import CorevaluesSection from "../components/CorevaluesSection.astro";
 
 // const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
@@ -52,9 +54,14 @@ import ContactInfo from "../components/ContactInfo.astro";
   </section>
   <section class="experience">
     <Tag style="tertiary">Experience</Tag>
-    <div class="teksten">
-      <h2>More than 25 years of experience</h2>
-      <p>3000+ our clients are insured around the World</p>
+    <div>
+      <div class="teksten">
+        <h2>More than 25 years of experience</h2>
+        <p>3000+ our clients are insured around the World</p>
+      </div>
+    </div>
+    <div class="animationen">
+      <Animation />
     </div>
   </section>
 
@@ -85,7 +92,6 @@ import ContactInfo from "../components/ContactInfo.astro";
     </figure>
   </section>
 </MainLayout>
-
 <style>
   .hero {
     background-color: var(--color-primary3);
@@ -156,6 +162,11 @@ import ContactInfo from "../components/ContactInfo.astro";
   .experience {
     background: var(--color-primary1);
     color: var(--color-primary3);
+    display: flex;
+  }
+
+  .animationen {
+    display: flex;
   }
 
   .core {

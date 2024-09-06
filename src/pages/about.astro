@@ -9,8 +9,19 @@ import case2 from "../assets/case2.jpg";
 ---
 
 <MainLayout title="About">
-  <AndenSection order="order" imageProps={{ imageProps: "case2" }} tagProps={{ style: "primary" }} h2="Turn your ideas into reality." tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">About Us</AndenSection>
-
+  <section>
+    <AndenSection order="order" imageProps={{ imageProps: "case2" }} tagProps={{ style: "primary" }} h2="Turn your ideas into reality." tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">About Us</AndenSection>
+    <dl>
+      <div>
+        <dt>Team members</dt>
+        <dd>908+</dd>
+      </div>
+      <div>
+        <dt>Happy customers</dt>
+        <dd>258+</dd>
+      </div>
+    </dl>
+  </section>
   <section class="team">
     <p class="faq">Our team</p>
     <h2>We champion the bold to achieve the extraordinary</h2>
@@ -37,40 +48,45 @@ import case2 from "../assets/case2.jpg";
       <Accordion overskrift1="Can I get a free trial before I purchase?" />
     </div>
   </section>
+</MainLayout>
+<style>
+  dl {
+    color: black;
+  }
+  .team {
+    color: black;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 151px 236px;
+    background: var(--color-secondary1);
+    gap: 40px;
 
-  <style>
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .accordion {
+    .overskrift-tag {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 151px 236px;
-      background: var(--color-secondary1);
-      gap: 40px;
-
-      .overskrift-tag {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 22px;
-        padding-inline: 123px;
-        .faq {
-          background: var(--color-primary2);
-          color: var(--color-secondary2);
-          padding: 0 19px;
-        }
+      align-items: center;
+      gap: 22px;
+      padding-inline: 123px;
+      .faq {
+        background: var(--color-primary2);
+        color: var(--color-secondary2);
+        padding: 0 19px;
       }
     }
-    @media screen and (min-width: 768px) {
-    }
+  }
+  @media screen and (min-width: 768px) {
+  }
 
-    @media screen and (min-width: 1024px) {
-    }
+  @media screen and (min-width: 1024px) {
+  }
 
-    @media screen and (min-width: 1440px) {
-    }
-  </style>
-</MainLayout>
+  @media screen and (min-width: 1440px) {
+  }
+</style>

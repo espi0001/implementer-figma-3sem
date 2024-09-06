@@ -5,10 +5,25 @@ import Accordion from "../components/Accordion.astro";
 import Tag from "../components/Tag.astro";
 
 import { Image } from "astro:assets";
-import case2 from "../assets/case2.jpg";
+import about1 from "../assets/about1.avif";
+
+import CorevaluesSection from "../components/CorevaluesSection.astro";
+
+const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
+
+import EmployeeSection from "../components/EmployeeSection.astro";
+
+const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/employees.json").then((res) => res.json());
 ---
 
 <MainLayout title="About">
+  <article class="koncerter_baggerund">
+    <div class="box">
+      <Tag style="secondary">Services</Tag>
+      <h1>Creative Services For Boost Your Business Growth</h1>
+      <!-- <Image alt="" src={about1} /> -->
+    </div>
+  </article>
   <section>
     <AndenSection order="order" imageProps={{ imageProps: "case2" }} tagProps={{ style: "primary" }} h2="Turn your ideas into reality." tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">About Us</AndenSection>
     <dl>
@@ -22,10 +37,19 @@ import case2 from "../assets/case2.jpg";
       </div>
     </dl>
   </section>
+
+  <section class="core">
+    <Tag style="secondary">Growing with our Clients</Tag>
+    <!-- 
+    <Overskrift farve="secondary" linket="#" buttonProps={{ style: "secondary" }} h2="Our core values & principles" tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.">Get in touch</Overskrift> -->
+    <CorevaluesSection data={corevalueData} buttonProps1={{ style: "secondary" }} buttonProps2={{ style: "primary" }} />
+  </section>
+
   <section class="team">
     <p class="faq">Our team</p>
     <h2>We champion the bold to achieve the extraordinary</h2>
     <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team.</p>
+    <EmployeeSection data={employeeData} />
   </section>
   <section class="accordion">
     <div class="overskrift-tag">
@@ -50,6 +74,21 @@ import case2 from "../assets/case2.jpg";
   </section>
 </MainLayout>
 <style>
+  .koncerter_baggerund {
+    background-image: url(../assets/about1.avif);
+    background-size: cover;
+    aspect-ratio: 16/5;
+    color: var(--color-primary3);
+  }
+  .box {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 29px;
+    /* display: inline-flex;
+    padding: 48px 60px 58px 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px; */
+  }
   dl {
     color: black;
   }
@@ -59,6 +98,11 @@ import case2 from "../assets/case2.jpg";
   .team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .core {
+    color: var(--color-primary3);
+    background: var(--color-secondary1);
   }
   .accordion {
     display: flex;
@@ -80,13 +124,5 @@ import case2 from "../assets/case2.jpg";
         padding: 0 19px;
       }
     }
-  }
-  @media screen and (min-width: 768px) {
-  }
-
-  @media screen and (min-width: 1024px) {
-  }
-
-  @media screen and (min-width: 1440px) {
   }
 </style>

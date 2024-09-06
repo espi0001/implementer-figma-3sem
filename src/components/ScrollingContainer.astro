@@ -43,7 +43,7 @@ const { cardContent } = Astro.props;
 
       .full {
         grid-column: full;
-        display: grid;
+        /* display: grid; */
         grid-template-columns: inherit;
         row-gap: 3rem;
         background: var(--color-secondary1);
@@ -56,7 +56,7 @@ const { cardContent } = Astro.props;
         > ul {
           scroll-snap-type: x mandatory;
           grid-column: full;
-          padding-inline: max(1rem, 50% - var(--content-width) / 2);
+          /* padding-inline: max(1rem, 50% - var(--content-width) / 2); */
           padding-block-end: 1rem;
 
           li {

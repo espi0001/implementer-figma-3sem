@@ -1,16 +1,11 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-
 import AndenSection from "../components/AndenSection.astro";
-
 import Button from "../components/Button.astro";
-
 import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
 import { cardContent } from "../data/card-content.js";
-
 import Tag from "../components/Tag.astro";
-
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import sarah from "../assets/images/sarah.jpg";
@@ -23,9 +18,9 @@ import ContactInfo from "../components/ContactInfo.astro";
 
 import Animation from "../components/Animation.astro";
 
-// import CorevaluesSection from "../components/CorevaluesSection.astro";
+import CorevaluesSection from "../components/CorevaluesSection.astro";
 
-// const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
+const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
 ---
 
 <MainLayout title="Home">
@@ -53,12 +48,10 @@ import Animation from "../components/Animation.astro";
     <ScrollingContainer cardContent={cardContent} />
   </section>
   <section class="experience">
-    <Tag style="tertiary">Experience</Tag>
-    <div>
-      <div class="teksten">
-        <h2>More than 25 years of experience</h2>
-        <p>3000+ our clients are insured around the World</p>
-      </div>
+    <div class="teksten">
+      <Tag style="tertiary">Experience</Tag>
+      <h2>More than 25 years of experience</h2>
+      <p>3000+ our clients are insured around the World</p>
     </div>
     <div class="animationen">
       <Animation />
@@ -67,12 +60,13 @@ import Animation from "../components/Animation.astro";
 
   <section class="core">
     <Tag style="secondary">Growing with our Clients</Tag>
-    <Overskrift farve="secondary" linket="#" buttonProps={{ style: "secondary" }} h2="Our core values & principles" tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.">Get in touch</Overskrift>
-    <!-- <CorevaluesSection data={corevalueData} /> -->
+    <!-- 
+    <Overskrift farve="secondary" linket="#" buttonProps={{ style: "secondary" }} h2="Our core values & principles" tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.">Get in touch</Overskrift> -->
+    <CorevaluesSection data={corevalueData} buttonProps1={{ style: "secondary" }} buttonProps2={{ style: "primary" }} />
   </section>
 
   <section class="sidste">
-    <article>
+    <article class="del1">
       <Tag style="secondary">Proccess</Tag>
       <h2>Contact Us. It’s Easy.</h2>
       <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative.</p>
@@ -154,9 +148,15 @@ import Animation from "../components/Animation.astro";
       font-weight: var(--font-weight-700);
     }
   }
-
+  .core {
+    background: var(--color-primary3);
+    display: flex;
+    flex-direction: column;
+  }
   .teksten {
     max-width: 50rem;
+    display: flex;
+    flex-direction: column;
   }
 
   .experience {
@@ -167,12 +167,10 @@ import Animation from "../components/Animation.astro";
 
   .animationen {
     display: flex;
+    gap: 20px;
+    align-items: center;
   }
 
-  .core {
-    background: var(--color-primary3);
-    color: var(--color-secondary2);
-  }
   .teksten2 {
     display: flex;
   }
@@ -181,6 +179,10 @@ import Animation from "../components/Animation.astro";
     grid-template-columns: 1fr 1fr;
     color: var(--color-primary3);
     gap: 69px;
+    .del1 {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .icons {

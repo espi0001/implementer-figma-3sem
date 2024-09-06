@@ -4,6 +4,8 @@ import AndenSection from "../components/AndenSection.astro";
 import Accordion from "../components/Accordion.astro";
 import Tag from "../components/Tag.astro";
 
+import Hero from "../components/Hero.astro";
+
 import { Image } from "astro:assets";
 import about1 from "../assets/about1.avif";
 
@@ -17,23 +19,26 @@ const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/fro
 ---
 
 <MainLayout title="About">
-  <article class="koncerter_baggerund">
-    <div class="box">
-      <Tag style="secondary">Services</Tag>
-      <h1>Creative Services For Boost Your Business Growth</h1>
-      <!-- <Image alt="" src={about1} /> -->
-    </div>
-  </article>
+  <Hero baggrund="baggrund1" h1="Creative Services For Boost Your Business Growth">Services</Hero>
+
   <section>
     <AndenSection order="order" imageProps={{ imageProps: "case2" }} tagProps={{ style: "primary" }} h2="Turn your ideas into reality." tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">About Us</AndenSection>
     <dl>
       <div>
-        <dt>Team members</dt>
-        <dd>908+</dd>
+        <dt>1128+</dt>
+        <dd>Successful Work</dd>
       </div>
       <div>
-        <dt>Happy customers</dt>
-        <dd>258+</dd>
+        <dt>908+</dt>
+        <dd>Team member</dd>
+      </div>
+      <div>
+        <dt>258+</dt>
+        <dd>Happy Customers</dd>
+      </div>
+      <div>
+        <dt>564+</dt>
+        <dd>Creative Idea</dd>
       </div>
     </dl>
   </section>
@@ -51,46 +56,43 @@ const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/fro
     <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team.</p>
     <EmployeeSection data={employeeData} />
   </section>
-  <section class="accordion">
-    <div class="overskrift-tag">
-      <Tag style="primary">FAQ</Tag>
-      <h2>Customer Questions</h2>
-    </div>
-    <div class="accordion-container">
-      <Accordion overskrift1="What will happen when I’ve sent my application?" />
+  <section>
+    <article class="accordion">
+      <div class="overskrift-tag">
+        <Tag style="primary">FAQ</Tag>
+        <h2>Customer Questions</h2>
+      </div>
+      <div class="accordion-container">
+        <Accordion overskrift1="What will happen when I’ve sent my application?" />
 
-      <Accordion overskrift1="Can I get a free trial before I purchase?">
-        <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
-      </Accordion>
+        <Accordion overskrift1="Can I get a free trial before I purchase?">
+          <p>Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements.</p>
+        </Accordion>
 
-      <Accordion overskrift1="What should I include in my personal statement?" />
+        <Accordion overskrift1="What should I include in my personal statement?" />
 
-      <Accordion overskrift1="Will membership plans be charged automatically?" />
+        <Accordion overskrift1="Will membership plans be charged automatically?" />
 
-      <Accordion overskrift1="What will happen when I’ve sent my application?" />
+        <Accordion overskrift1="What will happen when I’ve sent my application?" />
 
-      <Accordion overskrift1="Can I get a free trial before I purchase?" />
-    </div>
+        <Accordion overskrift1="Can I get a free trial before I purchase?" />
+      </div>
+    </article>
   </section>
 </MainLayout>
 <style>
-  .koncerter_baggerund {
-    background-image: url(../assets/about1.avif);
-    background-size: cover;
-    aspect-ratio: 16/5;
-    color: var(--color-primary3);
-  }
-  .box {
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 29px;
-    /* display: inline-flex;
-    padding: 48px 60px 58px 60px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px; */
-  }
   dl {
     color: black;
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    dt {
+      font-weight: 700;
+      font-size: var(--step-6);
+    }
+    dd {
+      font-size: var(--step-1);
+    }
   }
   .team {
     color: black;
@@ -109,8 +111,10 @@ const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/fro
     flex-direction: column;
     justify-content: center;
     padding: 151px 236px;
-    background: var(--color-secondary1);
     gap: 40px;
+    background: var(--color-secondary1);
+    color: var(--color-primary3);
+    border-radius: 30px;
 
     .overskrift-tag {
       display: flex;

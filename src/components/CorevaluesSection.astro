@@ -1,6 +1,7 @@
 ---
 import CorevaluesCard from "./CorevaluesCard.astro";
 import Button from "./Button.astro";
+import { Icon } from "astro-icon/components";
 
 const { data } = Astro.props;
 const { buttonProps1 } = Astro.props;
@@ -24,7 +25,8 @@ const { title, subtitle, button, values, link, text } = data;
       {
         values.map((corevalue) => (
           <li>
-            <img src={corevalue.icon} alt="" />
+            <Icon name={corevalue.icon} />
+
             <h5>{corevalue.title}</h5>
             <p>{corevalue.description}</p>
             <a href={corevalue.link.url}>{corevalue.link.text}</a>

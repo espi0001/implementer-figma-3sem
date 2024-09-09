@@ -6,11 +6,11 @@ import Tag from "./Tag.astro";
 const { imageProps, h2, tekst, tagProps, li1, li2, order } = Astro.props;
 ---
 
-<section class="what-to-expect">
+<section class="hero-section">
   <figure class={order}>
     <!-- <Image {...imageProps} /> -->
-    <Image alt="" src={home1} />
   </figure>
+  <Image alt="" src={home1} />
   <article>
     <Tag {...tagProps}><slot /></Tag>
 
@@ -29,23 +29,33 @@ const { imageProps, h2, tekst, tagProps, li1, li2, order } = Astro.props;
 
 <style>
   @layer components {
-    .what-to-expect {
+    .hero-section {
+      grid-column: full;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: center;
-      gap: 82px;
+      grid-template-columns: [full-start] 1fr [content] minmax(0, 600px) minmax(0, 600px) 1fr [full-end];
+      grid-template-rows: 1fr auto auto;
+      max-height: 90vh;
+      overflow: hidden;
+      gap: 2rem;
+
       color: var(--color-primary3);
 
-      article {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
+      figure {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        display: grid;
+        grid-template-columns: subgrid;
+        display: none;
       }
-
-      .content {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
+      img {
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+      }
+      article {
+        grid-column: 3 / -1;
+        grid-row: 1 / -2;
       }
     }
 

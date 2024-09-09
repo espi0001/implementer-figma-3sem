@@ -2,7 +2,7 @@
 import Tag from "./Tag.astro";
 ---
 
-<section class="yellow_graphics_section">
+<section class="container">
   <div class="del1">
     <div>
       <Tag style="tertiary">EXPERIENCE</Tag>
@@ -39,10 +39,10 @@ import Tag from "./Tag.astro";
 </section>
 <style>
   @layer components {
-    .yellow_graphics_section {
+    .container {
       grid-column: full;
       display: grid;
-      grid-template-columns: [full-start] 1fr [content] minmax(0, 600px) minmax(0, 600px) 1fr [full-end];
+      grid-template-columns: var(--layout-grid2);
       grid-template-rows: 1fr auto auto;
       background: var(--color-primary1);
       color: var(--color-primary3);
@@ -139,7 +139,7 @@ import Tag from "./Tag.astro";
 
   /* Media Query for devices with width below 900px */
   /* @media (max-width: 900px) {
-    .Yellow_graphics_section {
+    .container {
       flex-direction: column;
       align-items: center;
       padding: 2rem;

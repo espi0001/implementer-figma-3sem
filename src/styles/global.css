@@ -51,6 +51,8 @@
     --gap: clamp(1rem, 6vw, 3rem);
     --full: minmax(var(--gap), 1fr);
     --content: min(75rem, 100% - var(--gap) * 2);
+
+    --layout-grid2: [full-start] 1fr [content] minmax(0, 600px) minmax(0, 600px) 1fr [full-end];
   }
 
   body {

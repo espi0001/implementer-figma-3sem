@@ -38,17 +38,15 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">More About</Card>
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Explore Our Solution</Card>
   </section>
+
   <AndenSection imageProps={{ imageProps: "case2" }} tagProps={{ style: "secondary" }} h2="What To Expect" tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">WE'LL WORK WITH YOU</AndenSection>
 
   <section class="services">
-    <!-- <div class="teksten">
-      <h2>Financial Projections</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div> -->
     <ScrollingContainer cardContent={cardContent} />
   </section>
+  <!-- 
   <section class="experience">
-    <div class="teksten">
+    <div class="experience-teksten">
       <Tag style="tertiary">Experience</Tag>
       <h2>More than 25 years of experience</h2>
       <p>3000+ our clients are insured around the World</p>
@@ -56,7 +54,9 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
     <div class="animationen">
       <Animation />
     </div>
-  </section>
+  </section> -->
+
+  <Animation />
 
   <section class="core">
     <Tag style="secondary">Growing with our Clients</Tag>
@@ -101,16 +101,25 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
       width: 100%;
       max-width: 600px;
     }
+
+    .tekst-knap {
+      display: inline-flex;
+      flex-direction: column;
+      h1 {
+        font-weight: var(--font-weight-700);
+        margin-bottom: 32px;
+      }
+    }
   }
 
-  .tekst-knap {
-    display: inline-flex;
-    flex-direction: column;
-  }
-
-  h1 {
-    font-weight: var(--font-weight-700);
-    margin-bottom: 32px;
+  @media (width < 600px) {
+    .hero {
+      display: grid;
+      text-align: center;
+      img {
+        display: none;
+      }
+    }
   }
 
   .who-we-are {
@@ -119,8 +128,12 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
     gap: 20px;
     grid-column: content;
   }
-
-  .title {
+  @media (width < 600px) {
+    .who-we-are {
+      display: grid;
+    }
+  }
+  /* .title {
     padding-left: 12px;
     padding-right: 12px;
     background: var(--color-primary1);
@@ -129,7 +142,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
     align-items: flex-start;
     gap: 10px;
     display: inline-flex;
-  }
+  } */
 
   .services {
     margin: 0;
@@ -155,6 +168,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
     display: flex;
     flex-direction: column;
   }
+
   .teksten {
     max-width: 50rem;
     display: flex;
@@ -164,7 +178,13 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
   .experience {
     background: var(--color-primary1);
     color: var(--color-primary3);
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    .experience-teksten {
+      max-width: 50rem;
+      display: grid;
+      justify-items: start;
+    }
   }
 
   .animationen {

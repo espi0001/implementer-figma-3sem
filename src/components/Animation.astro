@@ -1,8 +1,10 @@
 ---
 const { style, linket } = Astro.props;
+
+import Tag from "./Tag.astro";
 ---
 
-<div class="parent" style="--percent: 85%">
+<!-- <div class="parent" style="--percent: 85%">
   <div class="child"></div>
 </div>
 
@@ -12,11 +14,126 @@ const { style, linket } = Astro.props;
 
 <div class="parent" style="--percent: 90%">
   <div class="child"></div>
-</div>
+</div> -->
+<section class="experience-section">
+  <div class="experience-text">
+    <Tag style="tertiary">EXPERIENCE</Tag>
+    <!-- <span class="tag">EXPERIENCE</span> -->
+    <h2>More than 25 years of experience</h2>
+    <p>3000+ our clients are insured around the World</p>
+  </div>
+  <div class="experience-stats">
+    <div>
+      <div class="parent" style="--percent: 85%">
+        <div class="child"></div>
+        <h1>85%</h1>
+      </div>
+      <h6>Consistency</h6>
+    </div>
+
+    <div>
+      <div class="parent" style="--percent: 95%">
+        <div class="child"></div>
+        <h1>95%</h1>
+      </div>
+      <h6>Improvement</h6>
+    </div>
+
+    <div>
+      <div class="parent" style="--percent: 90%">
+        <div class="child"></div>
+        <h1>90%</h1>
+      </div>
+      <h6>Branching</h6>
+    </div>
+  </div>
+</section>
 
 <style>
   @layer components {
-    @property --percent {
+    .experience-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      background: var(--color-primary1);
+      color: var(--color-primary3);
+      padding: 20px;
+
+      .experience-text {
+        max-width: 50rem;
+        display: grid;
+        justify-items: start;
+      }
+    }
+    @media (width < 600px) {
+      .experience-section {
+        display: block;
+      }
+    }
+    /* .experience-text .tag {
+      display: inline-block;
+      background-color: white;
+      color: black;
+      padding: 4px 8px;
+      border-radius: 10px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    } */
+
+    .experience-stats {
+      display: flex;
+      gap: 20px;
+    }
+
+    @layer components {
+      @property --percent {
+        syntax: "<percentage>";
+        inherits: true;
+        initial-value: 0%;
+      }
+
+      .parent {
+        --offset-pos: 5px;
+        border: var(--offset-pos) solid transparent;
+        background:
+          linear-gradient(#ffcc4a, #ffcc4aff) padding-box,
+          conic-gradient(white var(--percent), #daae3c 0) border-box;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+
+        .child {
+          aspect-ratio: 1;
+          border-radius: 50%;
+          width: 20px;
+          background: var(--color-primary3);
+          position: absolute;
+          offset-path: border-box;
+          offset-distance: var(--percent);
+          offset-anchor: 50% calc(50% - var(--offset-pos) / 2);
+        }
+      }
+
+      .parent {
+        aspect-ratio: 1;
+        width: 100%;
+        /* width: 150px;
+        height: 150px; */
+        border-radius: 50%;
+        margin-inline: auto;
+      }
+
+      .parent p {
+        font-size: 14px;
+        text-align: center;
+        margin: 0;
+        color: #000;
+      }
+    }
+
+    /* @property --percent {
       syntax: "<percentage>";
       inherits: true;
       initial-value: 0%;
@@ -24,7 +141,7 @@ const { style, linket } = Astro.props;
 
     .parent {
       --offset-pos: 5px;
-      /*animation: --pie 3s linear infinite;*/
+      animation: --pie 3s linear infinite;
       border: var(--offset-pos) solid transparent;
       background:
         linear-gradient(#ffcc4a, #ffcc4aff) padding-box,
@@ -55,6 +172,6 @@ const { style, linket } = Astro.props;
       height: 150px;
       border-radius: 1e5px;
       margin-inline: auto;
-    }
+    } */
   }
 </style>

@@ -2,15 +2,17 @@
 import CorevaluesCard from "./CorevaluesCard.astro";
 import Button from "./Button.astro";
 import { Icon } from "astro-icon/components";
+import Tag from "./Tag.astro";
 
 const { data } = Astro.props;
-const { buttonProps1 } = Astro.props;
+const { buttonProps1, tagProps } = Astro.props;
 const { title, subtitle, button, values, link, text } = data;
 // console.log(data);
 ---
 
 <section>
   <article class="full">
+    <Tag {...tagProps}><slot /></Tag>
     <h2>{title}</h2>
     <div class="teksten">
       <p>{subtitle}</p>
@@ -79,8 +81,9 @@ const { title, subtitle, button, values, link, text } = data;
           color: var(--color-primary3);
         }
       }
-      img {
-        width: 10%;
+
+      svg {
+        width: 53px;
       }
     }
 
@@ -94,6 +97,14 @@ const { title, subtitle, button, values, link, text } = data;
       justify-content: space-between;
       p {
         max-inline-size: 67ch;
+      }
+    }
+
+    @media (width < 600px) {
+      section,
+      ul,
+      .teksten {
+        flex-direction: column;
       }
     }
   }

@@ -6,7 +6,7 @@ import Tag from "./Tag.astro";
 const { imageProps, h2, tekst, tagProps, li1, li2, order } = Astro.props;
 ---
 
-<section class="what-to-expect">
+<section class="anden-section">
   <figure class={order}>
     <!-- <Image {...imageProps} /> -->
     <Image alt="" src={home1} />
@@ -29,7 +29,7 @@ const { imageProps, h2, tekst, tagProps, li1, li2, order } = Astro.props;
 
 <style>
   @layer components {
-    .what-to-expect {
+    .anden-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
       justify-content: center;
@@ -76,6 +76,12 @@ const { imageProps, h2, tekst, tagProps, li1, li2, order } = Astro.props;
       width: 1.6rem;
       aspect-ratio: 1;
       background: var(--checkmark-icon) 50% 50% / contain no-repeat;
+    }
+
+    @media (width < 600px) {
+      .anden-section {
+        display: block;
+      }
     }
   }
 </style>

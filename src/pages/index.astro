@@ -15,7 +15,7 @@ import home3 from "../assets/home3.jpg";
 import home4 from "../assets/home4.jpg";
 import Overskrift from "../components/Overskrift.astro";
 import ContactInfo from "../components/ContactInfo.astro";
-
+import HomeHero from "../components/HomeHero.astro";
 import Animation from "../components/Animation.astro";
 
 import CorevaluesSection from "../components/CorevaluesSection.astro";
@@ -24,14 +24,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
 ---
 
 <MainLayout title="Home">
-  <section class="hero">
-    <article class="tekst-knap">
-      <h1>Adam Buschemia Business Consultant</h1>
-      <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
-      <Button style="secondary" linket="#">Book a meeting</Button>
-    </article>
-    <Image alt="" src={sarah} />
-  </section>
+  <HomeHero />
 
   <section class="who-we-are">
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Finance & Restructuring" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Our Services</Card>
@@ -41,9 +34,12 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
 
   <AndenSection imageProps={{ imageProps: "case2" }} tagProps={{ style: "secondary" }} h2="What To Expect" tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">WE'LL WORK WITH YOU</AndenSection>
 
+  <ScrollingContainer cardContent={cardContent} />
+
+  <!-- 
   <section class="services">
     <ScrollingContainer cardContent={cardContent} />
-  </section>
+  </section> -->
   <!-- 
   <section class="experience">
     <div class="experience-teksten">
@@ -87,41 +83,6 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
   </section>
 </MainLayout>
 <style>
-  .hero {
-    background-color: var(--color-primary3);
-    color: var(--color-secondary2);
-    /* grid-column: content; */
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-
-    img {
-      width: 100%;
-      max-width: 600px;
-    }
-
-    .tekst-knap {
-      display: inline-flex;
-      flex-direction: column;
-      h1 {
-        font-weight: var(--font-weight-700);
-        margin-bottom: 32px;
-      }
-    }
-  }
-
-  @media (width < 600px) {
-    .hero {
-      display: grid;
-      text-align: center;
-      img {
-        display: none;
-      }
-    }
-  }
-
   .who-we-are {
     display: flex;
     justify-content: center;
@@ -145,6 +106,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
   } */
 
   .services {
+    grid-column: content;
     margin: 0;
     /* scroll-snap-align: center; */
     scroll-snap-stop: always;
@@ -167,6 +129,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
     background: var(--color-primary3);
     display: flex;
     flex-direction: column;
+    grid-column: content;
   }
 
   .teksten {
@@ -176,6 +139,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
   }
 
   .experience {
+    grid-column: content;
     background: var(--color-primary1);
     color: var(--color-primary3);
     display: grid;
@@ -197,6 +161,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
     display: flex;
   }
   .sidste {
+    grid-column: content;
     display: grid;
     grid-template-columns: 1fr 1fr;
     color: var(--color-primary3);

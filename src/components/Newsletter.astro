@@ -1,4 +1,8 @@
-<article>
+---
+import Button from "./Button.astro";
+---
+
+<!-- <article>
   <div class="tekst">
     <h4>Subscribe Our Newsletter</h4>
     <p>Build stronger Customer Relationships with Consultalk</p>
@@ -9,96 +13,93 @@
       <button class="send_buttondiv" type="submit">Subscribe</button>
     </div>
   </form>
-</article>
+</article> -->
+<div class="newsletter">
+  <div class="text">
+    <h4>Subscribe Our Newsletter</h4>
+    <p>Build stronger Customer Relationships with Consultalk</p>
+  </div>
+  <div class="sign-up">
+    <input class="newsletter-input" placeholder="Your email address" type="email" id="text" required />
+    <Button style="secondary">Subscribe</Button>
+  </div>
+</div>
 
 <style>
   @layer components {
-    article {
-      /* inline-size: min(600px, 100% - 1rem); */
-      block-size: 150px;
-      border-radius: 10px;
+    .newsletter {
       background: var(--color-primary3);
-      overflow: clip;
+      display: flex;
+      justify-content: space-between;
+      padding: 5.5rem;
       position: relative;
-      isolation: isolate;
+      border-radius: 30px;
+      overflow: hidden;
+      align-items: center;
+      max-width: 1200px;
+      margin-bottom: 9rem;
 
-      &::before {
-        --square-count: 12;
-        --square-size: 1rem;
-
+      &:before {
+        opacity: 0.6;
+        transform: rotate(40deg);
+        --square-count: 14;
+        --square-size: 1.34rem;
         --_square-size: var(--square-size, 1rem);
         --_square-half: calc(var(--square-size) / 2);
         --_square-sum: calc(var(--square-count) * var(--square-size));
-        z-index: -1;
+        z-index: 2;
         content: "";
         position: absolute;
-        right: 0;
-        top: 0;
-        transform-origin: 0 0;
+        inset: -150px -100px auto auto;
         inline-size: calc(round(var(--_square-sum), var(--_square-size)) - var(--_square-half));
-        aspect-ratio: 0.7;
+        aspect-ratio: 1;
         background: linear-gradient(135deg, #be965d, #976f40, #c99b61, #f0be7b, #ffcb85, #eebc79, #c0935b, #976f40) 0 0 / 100% 100%;
         mask:
           var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
           var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
-        /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
-        rotate: -45deg;
       }
 
-      &::after {
+      &:after {
         content: "";
-        height: inherit;
-        aspect-ratio: 1;
-        border-radius: inherit;
-        background: var(--color-primary2);
         position: absolute;
-        top: 50%;
-        right: 2rem;
-        rotate: -45deg;
-        transform-origin: right top;
+        background: var(--color-primary2);
+        width: 150px;
+        height: 200px;
+        border-radius: 20px;
+        z-index: 2;
+        right: -40px;
+        bottom: -120px;
+        transform: rotate(45deg);
       }
-    }
-    article {
-      display: flex;
-      align-items: center;
-      justify-content: center;
 
-      color: var(--color-secondary2);
-      gap: 141px;
-      padding: 87px;
-
-      h4 {
-        margin-bottom: 12px;
-      }
-    }
-
-    form {
-      display: flex;
-      align-items: center;
-      gap: 21px;
-
-      input#email {
-        padding: 22px 155px 22px 33px;
-        border-radius: 54px;
-        border: 1px #e3e3e3;
-        color: #a9a9a9;
-        background: var(--color-secondary2);
-      }
-    }
-
-    button {
-      display: inline-block;
-      padding: 16px 37px;
-      transition: all 0.55s ease;
-      border-radius: 42px;
-      background: var(--color-primary1);
-      color: var(--color-primary3);
-
-      &:hover {
-        transform: scale(1.04);
-        background: var(--color-primary3);
+      & h4,
+      p {
         color: var(--color-secondary2);
-        text-decoration: none;
+      }
+      .sign-up {
+        z-index: 3;
+        display: flex;
+        gap: 21px;
+        input {
+          border-radius: 100px;
+          background: var(--color-secondary2);
+          padding: 18px;
+          width: 310px;
+          z-index: 10;
+        }
+      }
+    }
+    @media (width < 700px) {
+      .newsletter {
+        flex-direction: column;
+        gap: 21px;
+        padding: 3rem;
+      }
+      .sign-up {
+        /* flex-direction: column; */
+        input {
+          width: 180px;
+        }
       }
     }
   }

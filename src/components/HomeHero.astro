@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import sarah from "../assets/images/sarah.jpg";
+import Button from "./Button.astro";
+---
+
+<section class="hero">
+  <article class="tekst-knap">
+    <h1>Adam Buschemia Business Consultant</h1>
+    <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+    <Button style="secondary" linket="#">Book a meeting</Button>
+  </article>
+  <Image alt="" src={sarah} />
+</section>
+
+<style>
+  @layer components {
+    .hero {
+      background-color: var(--color-primary3);
+      color: var(--color-secondary2);
+      grid-column: content;
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+
+      img {
+        width: 100%;
+        max-width: 600px;
+      }
+
+      .tekst-knap {
+        display: inline-flex;
+        flex-direction: column;
+        h1 {
+          font-weight: var(--font-weight-700);
+          margin-bottom: 32px;
+        }
+      }
+    }
+
+    @media (width < 600px) {
+      .hero {
+        display: grid;
+        text-align: center;
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+</style>

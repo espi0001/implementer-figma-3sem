@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import HeroSection from "../components/HeroSection.astro";
 import AndenSection from "../components/AndenSection.astro";
+import Experience from "../components/Experience.astro";
 import Button from "../components/Button.astro";
 import Card from "../components/Card.astro";
 import ScrollingContainer from "../components/ScrollingContainer.astro";
@@ -31,16 +32,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
 
   <ScrollingContainer cardContent={cardContent} />
 
-  <!-- <section class="experience">
-    <div class="teksten">
-      <Tag style="tertiary">Experience</Tag>
-      <h2>More than 25 years of experience</h2>
-      <p>3000+ our clients are insured around the World</p>
-    </div>
-    <div class="animationen">
-      <Animation />
-    </div>
-  </section> -->
+  <Experience />
 
   <!-- <section class="core">
     <Tag style="secondary">Growing with our Clients</Tag>
@@ -70,17 +62,6 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
   </section> -->
 </MainLayout>
 <style>
-  .title {
-    padding-left: 12px;
-    padding-right: 12px;
-    background: var(--color-primary1);
-    border-radius: 20px;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 10px;
-    display: inline-flex;
-  }
-
   .services {
     margin: 0;
     /* scroll-snap-align: center; */
@@ -104,23 +85,6 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
     background: var(--color-primary3);
     display: flex;
     flex-direction: column;
-  }
-  .teksten {
-    max-width: 50rem;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .experience {
-    background: var(--color-primary1);
-    color: var(--color-primary3);
-    display: flex;
-  }
-
-  .animationen {
-    display: flex;
-    gap: 20px;
-    align-items: center;
   }
 
   .teksten2 {

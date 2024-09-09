@@ -3,11 +3,13 @@ import Tag from "./Tag.astro";
 ---
 
 <section class="yellow_graphics_section">
-  <div class="yellow_section_text">
-    <Tag style="tertiary">EXPERIENCE</Tag>
+  <div class="del1">
+    <div>
+      <Tag style="tertiary">EXPERIENCE</Tag>
 
-    <h2>More than 25 years of experience</h2>
-    <p>3000+ our clients are insured around the World</p>
+      <h2>More than 25 years of experience</h2>
+      <p>3000+ our clients are insured around the World</p>
+    </div>
   </div>
   <div class="del2">
     <div class="circular_graphics">
@@ -49,12 +51,13 @@ import Tag from "./Tag.astro";
       @media (width < 600px) {
         display: block;
       }
-    }
-    > * {
-      grid-column: 2;
+
+      > * {
+        grid-column: 2;
+      }
     }
 
-    .yellow_section_text {
+    .del1 {
       display: grid;
       grid-template-columns: subgrid;
       align-items: center;
@@ -64,6 +67,10 @@ import Tag from "./Tag.astro";
       p {
         /* width: 300px; */
         margin-top: 1rem;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
       }
     }
     .del2 {

@@ -62,15 +62,10 @@
   main {
     display: grid;
     grid-template-columns: var(--layout-grid);
-    /* background-color: var(--color_black); */
-    /* max-width: 1600px; */
-    /* margin: auto; */
-    /* display: grid;
-    grid-template-columns: var(--layout-grid); */
   }
-  /* section {
-    padding-inline: 5rem;
-  } */
+  img {
+    border-radius: 30px;
+  }
 
   h1,
   h2,

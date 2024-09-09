@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import case2 from "../assets/case2.avif";
+---
+
+<section class="container">
+  <div class="billede">
+    <Image alt="" src={case2} />
+  </div>
+</section>
+<style>
+  @layer components {
+    .container {
+      grid-column: full;
+      display: grid;
+      grid-template-columns: var(--layout-grid2);
+      grid-template-rows: 1fr auto auto;
+      color: var(--color-primary3);
+      padding: 5rem 0;
+
+      @media (width < 600px) {
+        display: block;
+      }
+
+      > * {
+        grid-column: 2;
+      }
+
+      .billede {
+        display: grid;
+        grid-template-columns: subgrid;
+      }
+    }
+  }
+</style>

@@ -11,12 +11,10 @@ const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/fro
 <MainLayout title="Team">
   <HeroBackground surface="team" tag="TEAM" headline="The Consultors" />
 
-  <section>
+  <!-- <section>
     <Overskrift farve="primary" style="secondary" linket="#" buttonProps={{ style: "secondary" }} h2="Meet Our Great Team" tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.">Book a meeting</Overskrift>
-  </section>
-  <section>
-    <EmployeeSection data={employeeData} />
-  </section>
+  </section> -->
+  <EmployeeSection data={employeeData} />
 </MainLayout>
 
 <style></style>

@@ -28,11 +28,9 @@
     .container {
       grid-column: full;
       display: grid;
-      /* grid-template-columns: var(--layourgrid2); */
       grid-template-rows: 1fr auto auto;
       gap: 2rem;
       color: var(--color-primary3);
-
       @media (width < 600px) {
         display: block;
       }
@@ -42,6 +40,14 @@
         display: flex;
         justify-content: center;
         gap: 8rem;
+
+        @media (width < 600px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+          justify-items: center;
+        }
+
         dt {
           font-weight: 700;
           font-size: var(--font-35-50);

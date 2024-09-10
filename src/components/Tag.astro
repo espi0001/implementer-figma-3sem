@@ -1,8 +1,8 @@
 ---
-const { style } = Astro.props;
+const { style, place } = Astro.props;
 ---
 
-<p class={style}><slot /></p>
+<p class={`${style} ${place}`}><slot /></p>
 
 <style>
   @layer components {
@@ -25,6 +25,10 @@ const { style } = Astro.props;
     .tertiary {
       background: var(--color-secondary2);
       color: var(--color-primary3);
+    }
+
+    .center {
+      align-self: center; /* This should now work correctly */
     }
   }
 </style>

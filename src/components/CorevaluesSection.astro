@@ -5,12 +5,12 @@ import Tag from "./Tag.astro";
 import { Icon } from "astro-icon/components";
 
 const { data } = Astro.props;
-const { buttonProps1, tagProps } = Astro.props;
-const { title, subtitle, button, values, link, text } = data;
+const { buttonProps1, tagProps, background } = Astro.props;
+const { title, subtitle, button, values, text } = data;
 // console.log(data);
 ---
 
-<section>
+<section class={background}>
   <div class="del1">
     <Tag {...tagProps}><slot /></Tag>
     <h2>{title}</h2>
@@ -37,13 +37,21 @@ const { title, subtitle, button, values, link, text } = data;
 
 <style>
   @layer components {
+    .black {
+      background: var(--color-primary3);
+      color: var(--color-secondary2);
+    }
+
+    .white {
+      background: var(--color-secondary1);
+      color: var(--color-primary3);
+    }
     section {
       grid-column: 1 / -1;
       display: grid;
       grid-template-columns: inherit;
       row-gap: 2rem;
-      background: var(--color-primary3);
-      color: var(--color-secondary2);
+
       padding: 5rem 0;
       @media (width < 600px) {
         display: block;

@@ -1,7 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import HeroBackground from "../components/HeroBackground.astro";
-import AndenSection from "../components/AndenSection.astro";
+import AboutSection1 from "../components/AboutSection1.astro";
+import AboutSection2 from "../components/AboutSection2.astro";
 import Accordion from "../components/Accordion.astro";
 import Tag from "../components/Tag.astro";
 
@@ -21,27 +22,13 @@ const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/fro
 
 <MainLayout title="About">
   <HeroBackground surface="about" tag="SERVICE" headline="Creative Services For Boost Your Business Growth" />
-  <!-- <section>
-    <AndenSection order="order" imageProps={{ imageProps: "case2" }} tagProps={{ style: "primary" }} h2="Turn your ideas into reality." tekst="Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">About Us</AndenSection>
-    <dl>
-      <div>
-        <dt>1128+</dt>
-        <dd>Successful Work</dd>
-      </div>
-      <div>
-        <dt>908+</dt>
-        <dd>Team member</dd>
-      </div>
-      <div>
-        <dt>258+</dt>
-        <dd>Happy Customers</dd>
-      </div>
-      <div>
-        <dt>564+</dt>
-        <dd>Creative Idea</dd>
-      </div>
-    </dl>
-  </section>
+  <AboutSection1 />
+  <AboutSection2 />
+
+  <CorevaluesSection data={corevalueData} background="white" tagProps={{ style: "secondary" }} buttonProps1={{ style: "primary" }}>Growing with our Clients</CorevaluesSection>
+
+  <EmployeeSection data={employeeData} />
+  <!-- 
 
   <section class="core">
     <Tag style="secondary">Growing with our Clients</Tag>
@@ -80,19 +67,6 @@ const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/fro
   </section> -->
 </MainLayout>
 <style>
-  dl {
-    color: black;
-    display: flex;
-    justify-content: center;
-    gap: 8rem;
-    dt {
-      font-weight: 700;
-      font-size: var(--step-6);
-    }
-    dd {
-      font-size: var(--step-1);
-    }
-  }
   .team {
     color: black;
   }

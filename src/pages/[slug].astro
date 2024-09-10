@@ -34,14 +34,14 @@ if (!images[img]) {
 ---
 
 <MainLayout title="Card">
-  <article class="employee-details">
-    <div class="left">
+  <section class="container">
+    <div class="del1">
       <Image src={images[img]()} alt={name} />
     </div>
-    <div class="right">
+    <div class="del2">
       <div class="text-icon">
         <div class="text">
-          <h1 class="h4">{name}</h1>
+          <h4 class="h4">{name}</h4>
           <p>{title}</p>
         </div>
         <div class="icons">
@@ -80,24 +80,27 @@ if (!images[img]) {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
       </div>
     </div>
-  </article>
+  </section>
 </MainLayout>
 
 <style>
   @layer components {
-    .employee-details {
+    .container {
       margin-top: 180px;
       display: grid;
+      grid-column: content;
+
       grid-template-columns: repeat(2, 1fr);
       gap: 5rem;
-      .left {
+      color: var(--color-primary3);
+      .del1 {
         position: relative;
         &:before {
           position: absolute;
           content: "";
           height: 200px;
           width: 200px;
-          background-color: var(--color-secondary2);
+          background-color: var(--color-primary2);
           z-index: -1;
           left: -30px;
           top: -30px;
@@ -127,7 +130,7 @@ if (!images[img]) {
           border-radius: 20px;
         }
       }
-      .right {
+      .del2 {
         display: grid;
         gap: 35px;
         .text-icon {
@@ -137,7 +140,7 @@ if (!images[img]) {
             text-decoration: none;
             color: var(--heading-color);
             align-self: flex-start;
-            border-left: 1px solid var(--body-text);
+            border-left: 1px solid var(--color-primary3);
             display: flex;
             justify-content: flex-end;
             gap: 25px;

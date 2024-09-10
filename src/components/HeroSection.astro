@@ -15,7 +15,7 @@ import Card from "./Card.astro";
       <Button style="secondary" linket="#">Book a meeting</Button>
     </div>
   </div>
-  <Image alt="" src={sarah} />
+  <Image class="billedet" alt="" src={sarah} />
   <div class="cards">
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Finance & Restructuring" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">Our Services</Card>
     <Card style="primary" buttonProps={{ style: "primary" }} h6="Our Approach" tekst="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.">More About</Card>
@@ -47,10 +47,14 @@ import Card from "./Card.astro";
           align-self: start;
         }
       }
-
+      .billedet {
+        height: 100%;
+        object-fit: cover;
+      }
       img {
         grid-column: 3 / -1;
         grid-row: 1 / -2;
+        border-radius: 0px;
       }
 
       .cards {

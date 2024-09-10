@@ -11,6 +11,8 @@ import Hero from "../components/Hero.astro";
 import { Image } from "astro:assets";
 import about1 from "../assets/about1.avif";
 
+import AboutEmpolyee from "../components/AboutEmpolyee.astro";
+
 import CorevaluesSection from "../components/CorevaluesSection.astro";
 
 const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/corevalues.json").then((res) => res.json());
@@ -18,6 +20,7 @@ const corevalueData = await fetch("https://raw.githubusercontent.com/espi0001/fr
 import EmployeeSection from "../components/EmployeeSection.astro";
 
 const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/main/resources/json/employees.json").then((res) => res.json());
+const firstthreeemplloyees = employeeData.slice(0, 3);
 ---
 
 <MainLayout title="About">
@@ -27,7 +30,8 @@ const employeeData = await fetch("https://raw.githubusercontent.com/espi0001/fro
 
   <CorevaluesSection data={corevalueData} background="white" tagProps={{ style: "secondary" }} buttonProps1={{ style: "primary" }}>Growing with our Clients</CorevaluesSection>
 
-  <EmployeeSection data={employeeData} />
+  <AboutEmpolyee data={firstthreeemplloyees} />
+
   <!-- 
 
   <section class="core">

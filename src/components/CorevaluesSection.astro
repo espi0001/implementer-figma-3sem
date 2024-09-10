@@ -7,7 +7,6 @@ import { Icon } from "astro-icon/components";
 const { data } = Astro.props;
 const { buttonProps1, tagProps, background } = Astro.props;
 const { title, subtitle, button, values, text } = data;
-// console.log(data);
 ---
 
 <section class={background}>
@@ -37,15 +36,6 @@ const { title, subtitle, button, values, text } = data;
 
 <style>
   @layer components {
-    .black {
-      background: var(--color-primary3);
-      color: var(--color-secondary2);
-    }
-
-    .white {
-      background: var(--color-secondary1);
-      color: var(--color-primary3);
-    }
     section {
       grid-column: 1 / -1;
       display: grid;
@@ -134,62 +124,14 @@ const { title, subtitle, button, values, text } = data;
       }
     }
 
-    /* a {
+    .black {
+      background: var(--color-primary3);
+      color: var(--color-secondary2);
+    }
+
+    .white {
+      background: var(--color-secondary1);
       color: var(--color-primary3);
-      align-self: end;
-      &:hover {
-        transform: scale(1.04);
-      }
     }
-    section {
-      > * {
-        grid-column: content;
-      }
-      .full {
-        grid-column: full;
-        display: grid;
-        grid-template-columns: inherit;
-        row-gap: 3rem;
-
-        > ul {
-          padding-block-end: 1rem;
-        }
-      }
-    }
-
-    ul {
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      li {
-        flex-basis: min(400px, 90%);
-        background: var(--color-secondary2);
-        color: var(--color-text);
-        border-radius: 8px;
-        padding: 2.75rem 2.1875rem;
-        align-self: start;
-
-        h5 {
-          font-weight: 700;
-          color: var(--color-primary3);
-        }
-      }
-      svg {
-        width: 53px;
-      }
-    }
-
-    h6 {
-      margin-block: 0 0.625rem;
-      line-height: 1.125;
-    }
-
-    .teksten {
-      display: flex;
-      justify-content: space-between;
-      p {
-        max-inline-size: 67ch;
-      }
-    } */
   }
 </style>

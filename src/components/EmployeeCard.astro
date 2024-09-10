@@ -10,16 +10,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/
 if (!images[img]) throw new Error(`"${img}" does not exist in glob: "src/assets/images/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<!-- <article>
-  <Image src={images[img]()} alt={name} />
-  <h5>{name}</h5>
-  <p>{description}</p>
-  <div class="iconer">
-    <Icon name="instagram" />
-    <Icon name="twitter" />
-    <Icon name="facebook" />
-  </div>
-</article> -->
 <article>
   <a class="card-wrapper" href={`/${slug}`}>
     <div class="image-title">

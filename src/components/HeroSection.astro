@@ -63,6 +63,9 @@ import Card from "./Card.astro";
         display: flex;
         gap: 20px;
         background: none;
+        @media (width < 600px) {
+          display: block;
+        }
       }
     }
 

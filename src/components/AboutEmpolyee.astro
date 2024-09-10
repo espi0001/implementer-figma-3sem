@@ -41,6 +41,9 @@ import Tag from "./Tag.astro";
         grid-template-columns: repeat(3, 1fr);
         row-gap: 80px;
         column-gap: 50px;
+        @media (width < 600px) {
+          display: block;
+        }
       }
     }
   }

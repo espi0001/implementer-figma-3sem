@@ -56,17 +56,16 @@ import PieChart from "./PieChart.astro";
           display: flex;
           flex-direction: column;
           @media (max-width: 600px) {
-           margin-bottom: var(--space-m);
-        }
-                    
+            margin-bottom: var(--space-m);
+          }
         }
         > div ~ div {
           display: flex;
           justify-content: space-between;
-        
-         @media (min-width: 601px) {
-          gap: var(--space-s);
-        }
+
+          @media (min-width: 601px) {
+            gap: var(--space-s);
+          }
           div {
             display: grid;
             justify-items: center;

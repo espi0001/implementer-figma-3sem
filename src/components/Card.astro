@@ -3,16 +3,16 @@ import Button from "./Button.astro";
 const { style, h6, tekst, buttonProps } = Astro.props;
 ---
 
-<article class={style}>
+<div class={style}>
   <h6>{h6}</h6>
   <p>{tekst}</p>
 
   <Button {...buttonProps}><slot /></Button>
-</article>
+</div>
 
 <style>
   @layer components {
-    article {
+    div {
       padding: var(--space-l);
       display: flex;
       flex-direction: column;

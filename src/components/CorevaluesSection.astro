@@ -9,29 +9,33 @@ const { title, subtitle, button, values } = data;
 ---
 
 <section class={`${background} container`}>
-  <div class="del1">
-    <div class="text">
-      <Tag style="tertiary">Growing with our Clients</Tag>
-      <h2>{title}</h2>
-      <p>{subtitle}</p>
+  <article>
+    <div>
+      <div class="text">
+        <Tag style="tertiary">Growing with our Clients</Tag>
+        <h2>{title}</h2>
+      </div>
+      <div>
+        <p>{subtitle}</p>
+        <Button class="knap" {...buttonProps1} linket={button.link}>{button.text}</Button>
+      </div>
     </div>
-    <Button class="knap" {...buttonProps1} linket={button.link}>{button.text}</Button>
-  </div>
 
-  <ul role="list" class="del2">
-    {
-      values.map((corevalue) => (
-        <li>
-          <Icon name={corevalue.icon} />
-          <div>
-            <h6>{corevalue.title}</h6>
-            <p>{corevalue.description}</p>
-          </div>
-          <a href={corevalue.link.url}>{corevalue.link.text} &rarr;</a>
-        </li>
-      ))
-    }
-  </ul>
+    <ul>
+      {
+        values.map((corevalue) => (
+          <li>
+            <Icon name={corevalue.icon} />
+            <div>
+              <h6>{corevalue.title}</h6>
+              <p>{corevalue.description}</p>
+            </div>
+            <a href={corevalue.link.url}>{corevalue.link.text} &rarr;</a>
+          </li>
+        ))
+      }
+    </ul>
+  </article>
 </section>
 
 <style>
@@ -39,77 +43,63 @@ const { title, subtitle, button, values } = data;
     .container {
       grid-column: full;
       display: grid;
-      grid-template-columns: var(--layout-grid2);
-      grid-template-rows: var(--layout-rows2);
-      row-gap: 2rem;
-      padding: 5rem 0;
-      @media (width < 600px) {
-        /* display: block; */
-        padding-inline: 1rem;
+      grid-template-columns: subgrid;
+      row-gap: var(--space-m);
+      padding: var(--space-2xl) 0;
+      @media (max-width: 600px) {
+        padding: var(--space-m) 0;
       }
       > * {
-        grid-column: 2;
+        grid-column: content;
       }
-
-      > ul {
-        scroll-snap-type: x mandatory;
-        grid-column: 1 / -1;
-        padding-inline: max(1rem, 50% - var(--content) / 10px);
-        padding-block-end: 1rem;
-
-        li {
-          scroll-snap-align: center;
-          &:first-child {
-            margin-left: calc(50% - var(--content) / 2);
-            @media (width < 600px) {
-              margin-left: 0px;
-            }
-          }
-
-          &:last-child {
-            margin-right: calc(50% - var(--content) / 2);
-            @media (width < 600px) {
-              margin-right: 0px;
-            }
-          }
-        }
-      }
-      .del1 {
+      article {
         display: flex;
-        grid-column: 2 / 4;
-        justify-content: space-between;
-        @media (width < 600px) {
+        flex-direction: column;
+        @media (max-width: 600px) {
           flex-direction: column;
-          align-items: start;
         }
 
-        .text {
+        > div:first-of-type {
           display: flex;
           flex-direction: column;
-          max-width: 50%;
+          margin-bottom: var(--space-m-l);
           @media (width < 600px) {
-            max-width: none;
+            div {
+              flex-direction: column;
+            }
+            p {
+              margin-bottom: var(--space-xs-s);
+            }
+          }
+          div {
+            display: flex;
+            justify-content: space-between;
+          }
+          .text {
+            display: flex;
+            flex-direction: column;
+            max-width: 50%;
+            @media (width < 600px) {
+              max-width: none;
+            }
           }
           .icon {
             width: 100px;
           }
         }
-
-        .knap {
-          align-self: end;
-        }
       }
 
-      .del2 {
+      ul {
         display: flex;
         justify-content: space-between;
         /* gap: 2.25rem; */
-        overflow-x: auto;
-        list-style: none;
+        /* overflow-x: auto; */
         margin-top: 0;
 
         @media (width < 600px) {
-          flex-direction: column;
+          display: grid;
+          grid-template-columns: auto auto;
+          gap: var(--space-xs-s);
         }
 
         li {
@@ -119,12 +109,11 @@ const { title, subtitle, button, values } = data;
           color: var(--color-text);
           border-radius: 8px;
           padding: 2.25rem 1.44rem;
-          align-self: start;
           display: grid;
-          gap: var(--space-s);
+          gap: var(--space-xs-s);
 
-          @media (width < 600px) {
-            flex-basis: none;
+          @media (min < 600px) {
+            align-self: start;
           }
           h6 {
             font-weight: 700;
@@ -142,7 +131,7 @@ const { title, subtitle, button, values } = data;
           }
         }
         .icon-card {
-          width: 40px;
+          /* width: 40px; */
           margin-bottom: 14px;
         }
       }

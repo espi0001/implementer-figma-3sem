@@ -23,12 +23,12 @@ const { percent, percenttag } = Astro.props;
       /* margin: var(--space-xs-s); */
       transition: --percent 1s ease-out;
 
-      @media (width > 600px) {
-          margin: var(--space-xs-s);
-        }
+      @media (min-width: 601px) {
+        margin: var(--space-xs-s);
+      }
 
-      @media (width < 600px) {
-      width: 150px;
+      @media (max-width: 600px) {
+        width: 150px;
       }
     }
     .parent.animate {
@@ -47,8 +47,8 @@ const { percent, percenttag } = Astro.props;
       offset-anchor: 50% calc(50% - var(--offset-pos) / 2);
 
       @media (width < 600px) {
-      width: 20px;
-      border: 3px solid var(--color-secondary2);
+        width: 20px;
+        border: 3px solid var(--color-secondary2);
       }
     }
     span {

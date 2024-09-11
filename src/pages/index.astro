@@ -13,13 +13,13 @@ import ContactUs from "../components/ContactUs.astro";
 <MainLayout title="Home">
   <HeroSection />
 
-  <AndenSection imageProps={{ imageProps: "case2" }} tagProps={{ style: "secondary" }} h2="What To Expect" tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">WE'LL WORK WITH YOU</AndenSection>
+  <AndenSection tagProps={{ style: "secondary" }} h2="What To Expect" tekst="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." li1="Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day." li2="Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.">WE'LL WORK WITH YOU</AndenSection>
 
   <ScrollingContainer cardContent={cardContent} />
 
   <Experience />
 
-  <CorevaluesSection data={corevalueData} background="black" tagProps={{ style: "tertiary" }} buttonProps1={{ style: "secondary" }} buttonProps2={{ style: "primary" }}>Growing with our Clients</CorevaluesSection>
+  <CorevaluesSection data={corevalueData} background="black" buttonProps1={{ style: "secondary" }} buttonProps2={{ style: "primary" }} />
 
   <ContactUs />
 </MainLayout>

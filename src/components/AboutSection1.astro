@@ -28,8 +28,8 @@ import Tag from "./Tag.astro";
     .container {
       grid-column: full;
       display: grid;
-      grid-template-columns: [full-start] 1fr [content] minmax(0, 600px) minmax(0, 600px) 1fr [full-end];
-      grid-template-rows: 1fr auto auto;
+      grid-template-columns: var(--layout-grid2);
+      grid-template-rows: var(--layout-rows2);
       gap: 2rem;
       color: var(--color-primary3);
       padding: 5rem 0;

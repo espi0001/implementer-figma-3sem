@@ -3,8 +3,8 @@ const { cardContent } = Astro.props;
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="container">
-  <div class="del1">
+<section class="scrolling">
+  <div class="scrolling-top">
     <div class="text">
       <div class="icon">
         <Icon name="financial-projections" />
@@ -18,7 +18,7 @@ import { Icon } from "astro-icon/components";
     </div>
   </div>
 
-  <ul role="list" class="del2">
+  <ul class="full-width">
     {
       cardContent.map((card) => (
         <li>
@@ -35,28 +35,32 @@ import { Icon } from "astro-icon/components";
 
 <style>
   @layer components {
-    .container {
+    .scrolling {
       grid-column: full;
       display: grid;
       grid-template-columns: var(--layout-grid2);
-      grid-template-rows: var(--layout-rows2);
-      row-gap: 4rem;
-      padding: 5rem 0;
+      /* grid-template-rows: var(--layout-rows2); */
+      grid-template-rows: auto auto;
+      /* row-gap: 4rem; */
+      row-gap: var(--space-2xl);
+      /* padding: 5rem 0; */
+      padding: var(--space-xl) 0;
 
       background: var(--color-secondary1);
       color: var(--color-primary3);
       @media (width < 600px) {
-        padding-inline: 1rem;
+        /* padding-inline: 1rem; */
+        padding: var(--space-xs);
       }
-      > * {
+      /* > * {
         grid-column: 2;
-      }
+      } */
 
       > ul {
         scroll-snap-type: x mandatory;
         grid-column: 1 / -1;
+        grid-row: 2;
         padding-inline: max(1rem, 50% - var(--content) / 10px);
-        padding-block-end: 1rem;
 
         li {
           scroll-snap-align: center;
@@ -75,8 +79,9 @@ import { Icon } from "astro-icon/components";
         }
       }
 
-      .del1 {
+      .scrolling-top {
         grid-column: 2 / 4;
+        grid-row: 1;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -92,20 +97,27 @@ import { Icon } from "astro-icon/components";
           }
           .icon {
             width: 100px;
+            margin-bottom: var(--space-xs);
           }
         }
         .buttons {
           display: flex;
-          gap: 20px;
+          /* gap: 20px; */
+          gap: var(--space-s);
+
+          @media (width < 600px) {
+            margin-top: var(--space-s);
+          }
         }
       }
     }
+    /* scrolling stop */
 
     .scroll-arrow {
       background: var(--color-primary3);
       color: var(--color-secondary2);
       padding: 11px 14px;
-      border-radius: 100px;
+      border-radius: 50px;
       cursor: pointer;
       align-items: center;
       justify-content: center;
@@ -115,9 +127,10 @@ import { Icon } from "astro-icon/components";
       }
     }
 
-    .del2 {
+    .full-width {
       display: flex;
-      gap: 1rem;
+      /* gap: 1rem; */
+      gap: var(--space-xs);
       overflow-x: auto;
       list-style: none;
       margin-top: 0;
@@ -127,19 +140,14 @@ import { Icon } from "astro-icon/components";
         flex-shrink: 0;
         background: var(--color-card);
         color: var(--color-text);
-        border-radius: 8px;
+        border-radius: var(--space-2xs);
         padding: 2.75rem 2.1875rem;
         align-self: start;
         display: grid;
-        gap: 10px;
-        h6 {
-          font-weight: 700;
-          font-size: 1.5625rem;
-        }
       }
       .icon-card {
         width: 40px;
-        margin-bottom: 14px;
+        margin-bottom: var(--space-s);
         img {
           border-radius: 0px;
         }
@@ -147,9 +155,10 @@ import { Icon } from "astro-icon/components";
     }
   }
 </style>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const container = document.querySelector(".container ul");
+    const container = document.querySelector(".scrolling ul");
     const leftButton = document.getElementById("scroll-left");
     const rightButton = document.getElementById("scroll-right");
 

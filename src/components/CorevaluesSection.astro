@@ -13,7 +13,6 @@ const { title, subtitle, button, values } = data;
     <div class="text">
       <Tag style="tertiary">Growing with our Clients</Tag>
       <h2>{title}</h2>
-
       <p>{subtitle}</p>
     </div>
     <Button class="knap" {...buttonProps1} linket={button.link}>{button.text}</Button>
@@ -24,10 +23,11 @@ const { title, subtitle, button, values } = data;
       values.map((corevalue) => (
         <li>
           <Icon name={corevalue.icon} />
-
-          <h5>{corevalue.title}</h5>
-          <p>{corevalue.description}</p>
-          <a href={corevalue.link.url}>{corevalue.link.text}</a>
+          <div>
+            <h6>{corevalue.title}</h6>
+            <p>{corevalue.description}</p>
+          </div>
+          <a href={corevalue.link.url}>{corevalue.link.text} &rarr;</a>
         </li>
       ))
     }
@@ -118,22 +118,27 @@ const { title, subtitle, button, values } = data;
           background: var(--color-card);
           color: var(--color-text);
           border-radius: 8px;
-          font-size: 1rem;
           padding: 2.25rem 1.44rem;
           align-self: start;
           display: grid;
-          gap: 10px;
+          gap: var(--space-s);
 
           @media (width < 600px) {
             flex-basis: none;
           }
           h6 {
             font-weight: 700;
-            font-size: 1.5625rem;
+            font-size: 1.25em;
+            margin-bottom: var(--space-2xs-xs);
           }
 
           svg {
             width: 53px;
+          }
+
+          a {
+            color: var(--color-primary3);
+            font-weight: 600;
           }
         }
         .icon-card {
@@ -146,6 +151,10 @@ const { title, subtitle, button, values } = data;
     .black {
       background: var(--color-primary3);
       color: var(--color-secondary2);
+
+      h2 {
+        color: var(--color-secondary2);
+      }
     }
 
     .white {

@@ -28,22 +28,38 @@ const { h2, tekst, tagProps, li1, li2 } = Astro.props;
 <style>
   @layer components {
     .container {
-      grid-column: full;
+      /* grid-column: full;
       display: grid;
       grid-template-columns: var(--layout-grid2);
       grid-template-rows: var(--layout-rows2);
-      gap: 2rem;
+      gap: var(--space-m);
       color: var(--color-primary3);
-      padding: 5rem 0;
+      padding: var(--space-2xl); */
+      /* padding: 5rem 0; */
+
+      /* grid-column: content;
+      display: grid;
+      gap: var(--space-m);
+      color: var(--color-primary3);
+      padding: var(--space-2xl) 0;
+      grid-template-columns: 1fr 1fr; */
+
+      grid-column: full;
+      display: grid;
+      grid-template-columns: var(--layout-grid2);
+      grid-template-rows: var(--layout-rows3);
+      gap: var(--space-m);
+      color: var(--color-primary3);
+      padding: var(--space-2xl) 0;
+
       @media (width < 600px) {
         display: block;
+        padding: var(--space-m) 0;
       }
 
       .del1 {
         grid-column: 2 / 3;
-        grid-row: 2 / 3;
-        display: grid;
-        grid-template-columns: subgrid;
+        grid-row: 2 / -1;
       }
       .del2 {
         grid-column: 3;
@@ -52,20 +68,23 @@ const { h2, tekst, tagProps, li1, li2 } = Astro.props;
         div {
           display: flex;
           flex-direction: column;
+
+          p {
+            margin-bottom: var(--space-m);
+          }
         }
 
         ul {
           display: grid;
-          gap: 1rem;
-          margin-top: 1.5rem;
+          gap: var(--space-s);
+
           li {
             display: grid;
             grid-template-columns: auto 1fr;
             align-items: center;
-            gap: 1rem;
-            font-size: 1rem;
+            gap: var(--space-xs);
             color: var(--color-text);
-            max-width: 65ch;
+            max-width: 47ch;
             &:before {
               content: "";
               width: 1.6rem;

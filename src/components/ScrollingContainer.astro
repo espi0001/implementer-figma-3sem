@@ -1,5 +1,8 @@
 ---
-const { cardContent } = Astro.props;
+// const { cardContent } = Astro.props;
+const projectionsData = await fetch("https://raw.githubusercontent.com/espi0001/frontend-design/25ba0157175bfcae24af40ca1d7d9e9c44f6e3a0/resources/json/projections.json").then((res) => res.json());
+
+const { values } = projectionsData;
 import { Icon } from "astro-icon/components";
 ---
 
@@ -20,13 +23,13 @@ import { Icon } from "astro-icon/components";
 
   <ul class="full-width">
     {
-      cardContent.map((card) => (
+      values.map((value) => (
         <li>
           <div class="icon-card">
-            <img src={card.image} alt="" />
+            <Icon name={value.icon} />
           </div>
-          <h6>{card.title}</h6>
-          <p>{card.body}</p>
+          <h6>{value.title}</h6>
+          <p>{value.description}</p>
         </li>
       ))
     }
@@ -150,6 +153,9 @@ import { Icon } from "astro-icon/components";
           .icon-card {
             color: var(--color-primary1);
           }
+          /* img {
+            filter: invert(72%) sepia(84%) saturate(436%) hue-rotate(5deg) brightness(102%) contrast(101%);
+          } */
         }
 
         h6 {
@@ -164,6 +170,7 @@ import { Icon } from "astro-icon/components";
       }
       img {
         border-radius: 0px;
+        /* transition: filter 0.4s ease-in-out; */
       }
     }
   }

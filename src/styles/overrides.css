@@ -37,21 +37,48 @@ figure {
 .figure-version1 {
   &::before {
     --square-count: 14;
-    inset: -30px -30px auto auto;
+    /* inset: -30px -30px auto auto; */
+
+    translate: 30px -30px;
+    top: 0;
+    right: 0;
   }
   &::after {
     left: -1rem;
     bottom: -1rem;
   }
-}
 
+  @media (max-width: 600px) {
+    &::before {
+      --square-count: 10;
+      translate: 4px -15px;
+      top: 0;
+      right: 0;
+    }
+  }
+}
 .figure-version2 {
   &::before {
-    inset: -40px;
+    translate: -40px -40px;
+    top: -10px;
+    left: 0px;
   }
   &::after {
     left: -1rem;
     bottom: 18rem;
+  }
+
+  @media (max-width: 600px) {
+    &::before {
+      --square-count: 10;
+      translate: 30px -30px;
+      top: 10px;
+      left: -30px;
+    }
+    &::after {
+      left: 4px;
+      top: -14px;
+    }
   }
 }
 

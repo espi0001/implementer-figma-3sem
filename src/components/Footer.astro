@@ -44,10 +44,16 @@
       isolation: isolate;
       margin: 4rem 0;
 
+      @media (max-width: 600px) {
+        flex-direction: column;
+        gap: var(--space-m);
+        padding: 2rem;
+        align-items: stretch;
+      }
+
       &::before {
         --square-count: 12;
         --square-size: 1rem;
-
         --_square-size: var(--square-size, 1rem);
         --_square-half: calc(var(--square-size) / 2);
         --_square-sum: calc(var(--square-count) * var(--square-size));
@@ -86,7 +92,7 @@
         background: var(--color-secondary2);
         padding: 1rem 4rem 1rem 1rem;
         border-radius: 40px;
-        color: var(--primary-03);
+        color: var(--color-primary3);
       }
 
       button {
@@ -101,6 +107,17 @@
       }
     }
 
+    @media (max-width: 600px) {
+      .newsletter::before {
+        --square-size: 0.5rem;
+      }
+
+      .newsletter > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-m);
+      }
+    }
     .footer {
       grid-row: 2/3;
       grid-column: full;
